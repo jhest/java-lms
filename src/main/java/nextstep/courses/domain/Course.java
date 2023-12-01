@@ -13,12 +13,24 @@ public class Course {
 
     private LocalDateTime updatedAt;
 
+    private int ordinal;
+
     public Course() {
     }
 
     public Course(String title, Long creatorId) {
         this(0L, title, creatorId, LocalDateTime.now(), null);
     }
+
+    public Course(String title, Long creatorId, int ordinal) {
+        this.id = 0L;
+        this.title = title;
+        this.creatorId = creatorId;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = null;
+        this.ordinal = ordinal;
+    }
+
 
     public Course(Long id, String title, Long creatorId, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
@@ -49,5 +61,9 @@ public class Course {
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';
+    }
+
+    public int getOrdinal() {
+        return ordinal;
     }
 }
