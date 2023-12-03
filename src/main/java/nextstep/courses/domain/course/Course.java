@@ -1,4 +1,4 @@
-package nextstep.courses.domain;
+package nextstep.courses.domain.course;
 
 import java.time.LocalDateTime;
 
@@ -22,8 +22,8 @@ public class Course {
         this(0L, title, creatorId, LocalDateTime.now(), null);
     }
 
-    public Course(String title, Long creatorId, int ordinal) {
-        this.id = 0L;
+    public Course(Long id, String title, Long creatorId, int ordinal) {
+        this.id = id;
         this.title = title;
         this.creatorId = creatorId;
         this.createdAt = LocalDateTime.now();
@@ -65,5 +65,9 @@ public class Course {
 
     public int getOrdinal() {
         return ordinal;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
